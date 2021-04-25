@@ -4,83 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 <body>
+  <h1>Rock, Paper, Scissor Game</h1>
 
-  <script>
-    
-    let userChoice = prompt("Do you choose rock, paper or scissors?");
+  <main>
+    <div id="list">
+        <button id='rock'>Rock</button>
+        <button id='paper'>Paper</button>
+        <button id='scissor'>Scissor</button> 
+    </div>
 
-        if (! userChoice) {
-            // User choice was undefined
-            document.write("<p>Player 1, you cheated! Refresh this screen and fight like a man.</p>");
-        } else {
-            // Display user choice
-            document.write("<p>Player 1:" + " " + userChoice + "</p>");
-        }
-    
-    //computer randomly selects between Rock, Paper and Scissors
-    
-      let computerChoice = Math.random();
-      if (computerChoice < 0.34) {
-        computerChoice = 'rock';
-      }else if (computerChoice <= 0.67) {
-        computerChoice = 'paper'
-      }else {
-        computerChoice = 'scissors'
-      }
-    
+    <div id='gameTime'>
 
-    // Display computer choice
-    document.write("<p>Computer:" + " " + computerChoice + "</p>");
+      <div id='userScore'>Player Score
+        <p id='userScore1'><br></p>
+      </div>
 
-    // Compare user choise vs computer choice
-    function playRound(playerSelection, computerSelection) {
-      if (playerSelection === computerSelection) {
-        return 'Its a tie';
-      }
+      <div id='gameScore'>Game Score
+        <p id='gameScore1'><br></p>
+      </div>
 
-      if (playerSelection === 'rock') {
-        if (computerSelection === 'scissors') {
-        return 'You win!';
-      }else {
-        return 'You lose!';
-      }
-    }
+      <div id='cpScore'>Computer Score
+        <p id='cpScore1'><br></p>
+      </div>
       
-      if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-          return 'You win!';
-        }else {
-          return 'You lost!';
-        }
-      }
-
-      if (playerSelection === 'scissors') {
-        if (computerSelection === 'rock') {
-          return 'You Win!';
-        }else {
-          return 'You Lose!';
-        }
-      }
-    };
-
-   
-
-    // Run the playRound function
-    const results = playRound(userChoice,computerChoice);
-
-// Display results
-document.write("<br><hr><br>" + results);
-
-      
-
-
-
+    </div>
     
+  </main>
 
-  </script>
+    <script src="script.js"></script>
   
 </body>
 </html>
